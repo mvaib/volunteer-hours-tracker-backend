@@ -13,7 +13,9 @@ app.use(cors())
 
 app.use("/api/user", userRouter)
 app.use("/api/volunteer", volunteerRouter)
-
+app.get("/", (req, res) => {
+    res.send("API Working")
+})
 const startServer = async () => {
     try {
         await dbConnection()
